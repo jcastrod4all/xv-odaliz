@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>XV Años Odaliz</title>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="img-container">
+        <img src="./img/quince-profile-1.png" alt="" class="xv-profile">
+   </div>
+    <div class="container">
+       
+    
+       <div class="location-container">
+           <div class="location-title title-background">
+               <h2>Estoy Muy Contenta de invitarte a mi celebración</h2>
+           </div>
+           <div class="location-body body-content">
+               <h3>Nuestra Sra. de Guadalupe</h3>
+               <h3>24 JULIO 2021</h3>
+               <h3>6:00 P.M.</h3>
+           </div>
+           <div class="location-footer body-content">
+                <h3 class="recepcion">Recepcion</h3>
+                <p>Calle Unesco s/n Casino Ejidal Villa, Hidalgo, Nayarit.</p>
+                <h3>8:00 P.M.</h3>
+           </div>
+
+           
+       </div>
+
+       <div class="falta-vernos">
+            <div class="text-left-container title-background">
+                Falta para vernos
+            </div>
+
+            <div class="contador">
+                <ul>
+                    <li><span>Días</span><span class="dias">00</span></li>
+                    <li><span>Hrs</span><span class="horas">00</span></li>
+                    <li><span>Min</span><span class="minutos">00</span></li>
+                    <li><span>Seg</span><span class="segundos">00</span></li>
+                </ul>
+            </div>
+        </div>
+
+       <div class="agradezco">
+           <div class="agradezco-padres section-agradezco">
+               <h3>Agradezco a mis padres</h3>
+               <h3>Christian Becerra y María Luna</h3>
+           </div>
+           <div class="agradezco-padrinos section-agradezco">
+               <h3>Agradezco a mi madrina</h3>
+               <h3>Maribel Pereda Barrientos</h3>
+               
+           </div>
+           <img src="./img/flores.png" alt="" class="flores left">
+           <img src="./img/flores.png" alt="" class="flores right">
+           <img src="./img/flores.png" alt="" class="flores left-down">
+           <img src="./img/flores.png" alt="" class="flores right-down">
+       </div>
+
+
+       <div class="confirma-tu-asistencia ">
+           <div class="asistencia-title title-background">
+               <h2>Confirma tu asistencia aqui</h2>
+           </div>
+           <div class="asistencia-body body-content">
+               <p>Espero de corazón puedas acompañarme por favor confirma tu asistencia para agregarte a mi lista de invitados</p>
+               <a class="btn btn-confirmar" href="">CONFIRMAR</a>
+           </div>
+       </div>
+
+       <div class="codigo-vestimenta">
+            <div class="codigo-vestimenta-title title-background">
+                <h3>Código de vestimenta</h3>
+            </div>
+            <h2>FORMAL</h2>
+            <img src="./img/dress-code.png" alt="codigo-vestimenta">
+       </div>
+
+       <div class="donacion-efectivo">
+           <p>Es la tradición regalar dinero en efectivo a la quinceañera el día del evento</p>
+
+           <img class="sobre-donar" src="./img/sobre.png" alt="sobre">
+
+           <img class="profile-2" src="./img/quince-profile-2.png" alt="Quinceañera 2">
+
+
+           <div class="title-donar-efectivo title-background">
+               <h3>Gracias, te esperamos</h3>
+           </div>
+       </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (e) => {
+            let minutosSpan = document.querySelector('.minutos');
+            let horasSpan = document.querySelector('.horas');
+            let segundosSpan = document.querySelector('.segundos');
+            let diasSpan = document.querySelector('.dias')
+            
+           
+            setInterval(() => {
+                let cumpleaños = new Date('2021/10/21');
+                let hoy = new Date();
+                let resta = cumpleaños.getTime() - hoy.getTime();
+
+                let dias = Math.floor(resta/(1000*60*60*24));
+                let horas = Math.floor((resta%(1000*60*60*24)) / (1000*60*60));
+                let minutos = Math.floor((resta%(1000*60*60)) / (1000*60));
+                let segundos = Math.floor((resta%(1000*60)) / (1000));
+
+                segundosSpan.innerHTML = segundos;
+                horasSpan.innerHTML = horas;
+                minutosSpan.innerHTML = minutos;
+                diasSpan.innerHTML = dias;
+                
+            }, 1000);
+        })
+    </script>
+</body>
+</html>
